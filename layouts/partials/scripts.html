@@ -64,3 +64,23 @@
   })();
 </script>
 {{- end }}
+
+<!-- Valine -->
+{{- if .Site.Params.Valine_leancloudAppid -}}
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+	    <!--Valine 的核心代码库-->
+    <!--<script type="text/javascript" src="{{ "dist/Valine.min.js" | relURL }}"></script>-->
+	<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script>
+		new Valine({
+			el: '#comment' ,
+			notify:false, 
+			verify:false, 
+			appId: '{{ .Site.Params.Valine_leancloudAppid }}',
+			appKey: '{{ .Site.Params.Valine_leancloudAppkey }}',
+			placeholder: 'ヾﾉ≧∀≦)o欢迎评论!',
+			path:window.location.pathname, 
+			avatar:'wavatar' 
+		});
+    </script>
+{{- end }}

@@ -66,5 +66,9 @@
         {{- end }}
       </nav>
     </footer>
+	{{- if .Site.Params.Valine_leancloudAppid -}}
+		<p>评论</p>
+		<div id="comment"></div>
+	{{- end }}
   </article>
 {{- end }}
